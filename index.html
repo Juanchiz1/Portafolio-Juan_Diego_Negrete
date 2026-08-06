@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juan Diego Negrete Portillo — Desarrollador &amp; QA Tester</title>
+<meta name="description" content="Portafolio de Juan Diego Negrete Portillo. Ingeniero de Sistemas, desarrollador full-stack y QA Beta Tester certificado de SuperWorldBox. Disponible para roles junior remotos y proyectos freelance.">
+
+<!-- Fuentes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Iconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/devicon.min.css">
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Barra de progreso de scroll -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#inicio" class="nav__logo">
+      <span class="nav__prompt">&gt;</span>juanchiz<span class="nav__cursor">_</span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#inicio" class="nav__link" data-i18n="nav.inicio">Inicio</a>
+      <a href="#sobre-mi" class="nav__link" data-i18n="nav.sobremi">Sobre mí</a>
+      <a href="#experiencia" class="nav__link" data-i18n="nav.experiencia">Experiencia</a>
+      <a href="#proyectos" class="nav__link" data-i18n="nav.proyectos">Proyectos</a>
+      <a href="#trayectoria" class="nav__link" data-i18n="nav.formacion">Formación</a>
+      <a href="#habilidades" class="nav__link" data-i18n="nav.habilidades">Habilidades</a>
+      <a href="#servicios" class="nav__link" data-i18n="nav.servicios">Cotiza tu proyecto</a>
+      <a href="#hobbies" class="nav__link" data-i18n="nav.hobbies">Fuera del código</a>
+      <a href="#contacto" class="nav__link nav__link--cta" data-i18n="nav.contacto">Contacto</a>
+    </nav>
+    <button class="lang-toggle" id="langToggle" aria-label="Switch to English">EN</button>
+    <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="inicio">
+    <div class="hero__inner">
+      <div class="hero__copy">
+        <p class="eyebrow">// 01 · inicio</p>
+        <h1 class="hero__title">
+          Juan Diego<br>Negrete Portillo
+        </h1>
+        <p class="hero__role">
+          <span id="roleTyped"></span><span class="type-cursor">|</span>
+        </p>
+        <p class="hero__desc" data-i18n="hero.desc" data-i18n-html>
+          Estudiante de noveno semestre de Ingeniería de Sistemas y Telecomunicaciones en la
+          Universidad de Córdoba, con formación práctica en desarrollo full-stack. Construyo
+          software y también lo pongo a prueba: soy <strong>Beta Tester y traductor EN→ES
+          acreditado de SuperWorldBox</strong> (Maxim Karpenko Studios), reconocido en los créditos
+          oficiales del estudio, con inglés B2++ (nivel actual C1) para trabajar con equipos remotos e internacionales.
+        </p>
+        <div class="hero__actions">
+          <a href="#proyectos" class="btn btn--primary">
+            <i class="fa-solid fa-diagram-project"></i> <span data-i18n="hero.verProyectos">Ver proyectos</span>
+          </a>
+          <a href="assets/CV-Juan-Diego-Negrete-Portillo.pdf" class="btn btn--ghost" id="cvDownload" download>
+            <i class="fa-solid fa-arrow-down-to-line"></i> <span data-i18n="hero.descargarCV">Descargar CV</span>
+          </a>
+        </div>
+        <div class="hero__social">
+          <a href="https://github.com/Juanchiz1" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/juan-diego-negrete-portillo-352111195" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="mailto:juandinegrete2006@outlook.com" aria-label="Correo"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <!-- Elemento firma: terminal con "test suite" del perfil -->
+      <div class="hero__visual">
+        <div class="terminal" role="img" aria-label="Suite de pruebas mostrando el perfil profesional de Juan Diego">
+          <div class="terminal__bar">
+            <span class="dot dot--red"></span>
+            <span class="dot dot--yellow"></span>
+            <span class="dot dot--green"></span>
+            <span class="terminal__filename">juan_diego.test.js</span>
+          </div>
+          <div class="terminal__body" id="terminalBody">
+            <!-- Contenido generado por JS para animar -->
+          </div>
+        </div>
+        <div class="hero__badge">
+          <i class="fa-solid fa-bug-slash"></i>
+          <div>
+            <strong>QA Beta Tester</strong>
+            <span>SuperWorldBox — Maxim Karpenko Studios</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#sobre-mi" class="scroll-hint" aria-label="Bajar a la siguiente sección">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ============ SOBRE MÍ ============ -->
+  <section class="section" id="sobre-mi">
+    <div class="section__inner">
+      <p class="eyebrow" data-i18n="about.eyebrow">// 02 · sobre-mi</p>
+      <h2 class="section__title" data-i18n="about.title">Un poco de contexto</h2>
+
+      <div class="about">
+        <div class="about__portrait">
+          <div class="portrait">
+            <img src="assets/juan-diego-foto.jpg" alt="Foto de Juan Diego Negrete Portillo">
+          </div>
+          <div class="portrait__ring"></div>
+        </div>
+
+        <div class="about__content">
+          <p data-i18n="about.p1" data-i18n-html>
+            Soy Juan Diego, de Montería, Colombia. Curso noveno semestre de Ingeniería de Sistemas
+            y Telecomunicaciones en la Universidad de Córdoba y estoy en la recta final antes de
+            graduarme, buscando activamente mi primera oportunidad formal como desarrollador
+            junior o QA tester — con preferencia por trabajo remoto, dado el mercado tech local
+            limitado en Montería.
+          </p>
+          <p data-i18n="about.p2" data-i18n-html>
+            Mi punto diferencial es que ya tengo experiencia real fuera del aula: desde enero de
+            2022 soy <strong>Beta Tester y traductor EN→ES</strong> del videojuego
+            <strong>SuperWorldBox</strong> para Maxim Karpenko Studios, ejecutando pruebas
+            funcionales y de regresión antes de cada lanzamiento en Steam, documentando bugs de
+            forma estructurada junto al equipo de desarrollo y traduciendo contenido del juego.
+            Estoy <strong>reconocido oficialmente en los créditos del videojuego</strong> como
+            tester del equipo — experiencia real de QA en un entorno internacional y remoto.
+          </p>
+          <p data-i18n="about.p3" data-i18n-html>
+            Manejo <strong>Java, Python, JavaScript, SQL y PHP</strong>, con desarrollo full-stack
+            en <strong>React, Node.js, HTML5/CSS3</strong> y bases de conocimiento en Angular y
+            Laravel. Trabajo con MySQL y PostgreSQL, Git/GitHub, y metodologías ágiles (Scrum,
+            Kanban) en equipos remotos. Mi inglés es nivel <strong>B2++</strong> (nivel actual C1), lo que me permite
+            trabajar sin fricción con equipos y clientes internacionales.
+          </p>
+
+          <div class="quickfacts">
+            <div class="quickfact">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <div><strong data-i18n="about.fact.formacion.title">Ing. de Sistemas y Telecom.</strong><span data-i18n="about.fact.formacion.sub">Universidad de Córdoba — 9° semestre</span></div>
+            </div>
+            <div class="quickfact">
+              <i class="fa-solid fa-language"></i>
+              <div><strong data-i18n="about.fact.ingles.title">Inglés B2++</strong><span data-i18n="about.fact.ingles.sub">Nivel actual C1 — equipos internacionales</span></div>
+            </div>
+            <div class="quickfact">
+              <i class="fa-solid fa-location-dot"></i>
+              <div><strong data-i18n="about.fact.ubicacion.title">Montería, Colombia</strong><span data-i18n="about.fact.ubicacion.sub">Disponible para trabajo remoto</span></div>
+            </div>
+            <div class="quickfact">
+              <i class="fa-solid fa-bolt"></i>
+              <div><strong data-i18n="about.fact.disponibilidad.title">Disponibilidad inmediata</strong><span data-i18n="about.fact.disponibilidad.sub">Junior Dev · QA · Prácticas</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCIA ============ -->
+  <section class="section section--alt" id="experiencia">
+    <div class="section__inner">
+      <p class="eyebrow" data-i18n="experiencia.eyebrow">// 03 · experiencia</p>
+      <h2 class="section__title" data-i18n="experiencia.title">Experiencia profesional</h2>
+      <p class="section__subtitle" data-i18n="experiencia.subtitle">
+        Lo que he aportado en cada rol, como un registro de cambios.
+      </p>
+
+      <div class="experience" id="experienceList">
+        <!-- Generado desde js/data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROYECTOS ============ -->
+  <section class="section" id="proyectos">
+    <div class="section__inner">
+      <p class="eyebrow" data-i18n="proyectos.eyebrow">// 04 · proyectos</p>
+      <h2 class="section__title" data-i18n="proyectos.title">Proyectos</h2>
+      <p class="section__subtitle" data-i18n="proyectos.subtitle">
+        Filtra por tecnología para ver justo lo que te interesa revisar.
+      </p>
+
+      <div class="filters" id="filters">
+        <!-- Los filtros se generan automáticamente desde js/data.js -->
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Las tarjetas se generan automáticamente desde js/data.js -->
+      </div>
+
+      <p class="projects-empty" id="projectsEmpty" data-i18n="proyectos.empty" hidden>
+        No hay proyectos con esa combinación de filtros todavía — pronto habrá más 🙂
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ TRAYECTORIA (certificaciones / estudios) ============ -->
+  <section class="section" id="trayectoria">
+    <div class="section__inner">
+      <p class="eyebrow" data-i18n="trayectoria.eyebrow">// 05 · trayectoria</p>
+      <h2 class="section__title" data-i18n="trayectoria.title">Formación y certificaciones</h2>
+      <p class="section__subtitle" data-i18n="trayectoria.subtitle">
+        Mi trayectoria, en formato de historial de commits.
+      </p>
+
+      <div class="commitlog" id="commitLog">
+        <!-- Generado desde js/data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HABILIDADES ============ -->
+  <section class="section section--alt" id="habilidades">
+    <div class="section__inner">
+      <p class="eyebrow" data-i18n="habilidades.eyebrow">// 06 · habilidades</p>
+      <h2 class="section__title" data-i18n="habilidades.title">Stack técnico</h2>
+      <p class="section__subtitle" data-i18n="habilidades.subtitle">
+        Cobertura de mi stack principal, medida como en un reporte de pruebas.
+      </p>
+
+      <div class="skills" id="skillsGrid">
+        <!-- Generado desde js/data.js -->
+      </div>
+
+      <div class="techstack">
+        <h3 class="techstack__title" data-i18n="habilidades.techTitle">Lenguajes, frameworks y herramientas</h3>
+        <div id="techStackGroups">
+          <!-- Generado desde js/data.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICIOS / COTIZA TU PROYECTO ============ -->
+  <section class="section" id="servicios">
+    <div class="section__inner">
+      <p class="eyebrow" data-i18n="servicios.eyebrow">// 07 · cotiza-tu-proyecto</p>
+      <h2 class="section__title" data-i18n="servicios.title">Cotiza tu proyecto</h2>
+      <p class="section__subtitle" data-i18n="servicios.subtitle">
+        ¿Tienes un negocio, un establecimiento o una idea que necesita software? Cuéntame qué
+        necesitas y te envío una propuesta sin compromiso.
+      </p>
+
+      <div class="services-grid" id="servicesGrid">
+        <!-- Generado desde js/data.js -->
+      </div>
+
+      <div class="process">
+        <h3 class="process__title" data-i18n="servicios.procesoTitle">Cómo trabajamos</h3>
+        <ol class="process__steps" id="processSteps">
+          <!-- Generado desde js/data.js -->
+        </ol>
+      </div>
+
+      <div class="quote-form-wrap">
+        <h3 class="quote-form__title" data-i18n="servicios.formTitle">Cuéntame sobre tu proyecto</h3>
+        <form class="quote-form" id="quoteForm">
+          <div class="quote-form__grid">
+            <div class="field">
+              <label for="qName" data-i18n="servicios.nombre">// nombre</label>
+              <input type="text" id="qName" name="qName" required>
+            </div>
+            <div class="field">
+              <label for="qBusiness" data-i18n="servicios.negocio">// negocio o empresa (opcional)</label>
+              <input type="text" id="qBusiness" name="qBusiness">
+            </div>
+            <div class="field">
+              <label for="qEmail" data-i18n="servicios.email">// email</label>
+              <input type="email" id="qEmail" name="qEmail" required>
+            </div>
+            <div class="field">
+              <label for="qType" data-i18n="servicios.tipoProyecto">// tipo de proyecto</label>
+              <select id="qType" name="qType">
+                <option value="" data-i18n="servicios.tipoProyecto.placeholder">Selecciona una opción</option>
+                <option value="web" data-i18n="servicios.tipoProyecto.web">Sitio web / landing page</option>
+                <option value="app" data-i18n="servicios.tipoProyecto.app">Aplicación web a medida</option>
+                <option value="qa" data-i18n="servicios.tipoProyecto.qa">QA / testing de software</option>
+                <option value="traduccion" data-i18n="servicios.tipoProyecto.traduccion">Traducción técnica</option>
+                <option value="otro" data-i18n="servicios.tipoProyecto.otro">Otro</option>
+              </select>
+            </div>
+            <div class="field quote-form__span2">
+              <label for="qBudget" data-i18n="servicios.presupuesto">// presupuesto estimado (opcional)</label>
+              <input type="text" id="qBudget" name="qBudget">
+            </div>
+            <div class="field quote-form__span2">
+              <label for="qDesc" data-i18n="servicios.descripcion">// descripción del proyecto</label>
+              <textarea id="qDesc" name="qDesc" rows="5" required data-i18n-placeholder="servicios.descripcion.placeholder" placeholder="Cuéntame qué necesitas, para cuándo, y cualquier detalle relevante..."></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block">
+            <i class="fa-solid fa-file-invoice-dollar"></i> <span data-i18n="servicios.enviar">solicitar_cotizacion()</span>
+          </button>
+          <p class="contact__note" id="quoteNote"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOBBIES / FUERA DEL CÓDIGO ============ -->
+  <section class="section section--alt" id="hobbies">
+    <div class="section__inner">
+      <p class="eyebrow" data-i18n="hobbies.eyebrow">// 08 · fuera-del-código</p>
+      <h2 class="section__title" data-i18n="hobbies.title">Fuera del código</h2>
+      <p class="section__subtitle" data-i18n="hobbies.subtitle">
+        Soy de Córdoba, Colombia. Cuando no estoy programando o probando software, esto es lo que me mueve.
+      </p>
+
+      <div class="hobbies">
+        <div class="hobbies__photo">
+          <img src="assets/juan-diego-naturaleza.jpg" data-i18n-alt="hobbies.imgAlt" alt="Juan Diego al aire libre, en un campo de Córdoba">
+        </div>
+        <div class="hobbies__content">
+          <p data-i18n="hobbies.p1" data-i18n-html>
+            Tengo un canal de YouTube, <strong>Tiempo Con Juan Diego</strong>, donde comparto
+            contenido a mi manera. Fuera de la pantalla, voy seguido al gimnasio — me gusta la
+            disciplina que exige — y trato de pasar tiempo en la naturaleza siempre que puedo,
+            algo fácil de hacer creciendo en Córdoba.
+          </p>
+          <p data-i18n="hobbies.p2" data-i18n-html>
+            Soy curioso por naturaleza: me gusta aprender cosas nuevas todo el tiempo, innovar y
+            explorar ideas, y la ciencia en general me atrae casi tanto como la programación. Esa
+            misma curiosidad es la que aplico cuando pruebo software: siempre preguntándome qué
+            más podría fallar.
+          </p>
+          <div class="hobbies__list" id="hobbiesList">
+            <!-- Generado desde js/data.js -->
+          </div>
+          <a href="https://www.youtube.com/@Tiempoconjuandiego" target="_blank" rel="noopener" class="btn btn--ghost">
+            <i class="fa-brands fa-youtube"></i> Tiempo Con Juan Diego
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section class="section" id="contacto">
+    <div class="section__inner">
+      <p class="eyebrow" data-i18n="contacto.eyebrow">// 09 · contacto</p>
+      <h2 class="section__title" data-i18n="contacto.title">Hablemos</h2>
+      <p class="section__subtitle" data-i18n="contacto.subtitle">
+        ¿Buscas sumar a alguien junior con ganas y experiencia real en QA, o necesitas un
+        desarrollador para tu proyecto? Escríbeme.
+      </p>
+
+      <div class="contact">
+        <form class="contact__form" id="contactForm">
+          <div class="field">
+            <label for="name" data-i18n="contacto.nombre">// nombre</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="email" data-i18n="contacto.email">// email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="message" data-i18n="contacto.mensaje">// mensaje</label>
+            <textarea id="message" name="message" rows="5" required data-i18n-placeholder="contacto.mensaje.placeholder" placeholder="Cuéntame sobre la vacante o el proyecto..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block">
+            <i class="fa-solid fa-terminal"></i> <span data-i18n="contacto.enviar">enviar_mensaje()</span>
+          </button>
+          <p class="contact__note" id="contactNote"></p>
+        </form>
+
+        <div class="contact__side">
+          <a class="contact__card" href="mailto:juandinegrete2006@outlook.com">
+            <i class="fa-solid fa-envelope"></i>
+            <div><strong data-i18n="contacto.correo">Correo</strong><span>juandinegrete2006@outlook.com</span></div>
+          </a>
+          <a class="contact__card" href="tel:+573209594155">
+            <i class="fa-solid fa-phone"></i>
+            <div><strong data-i18n="contacto.telefono">Teléfono</strong><span>+57 320 959 4155</span></div>
+          </a>
+          <a class="contact__card" href="https://www.linkedin.com/in/juan-diego-negrete-portillo-352111195" target="_blank" rel="noopener">
+            <i class="fa-brands fa-linkedin"></i>
+            <div><strong>LinkedIn</strong><span>juan-diego-negrete-portillo</span></div>
+          </a>
+          <a class="contact__card" href="https://github.com/Juanchiz1" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github"></i>
+            <div><strong>GitHub</strong><span>@Juanchiz1</span></div>
+          </a>
+          <div class="contact__status">
+            <span class="status-dot"></span> <span data-i18n="contacto.estado">Disponible para roles remotos y freelance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <span>© <span id="year"></span> Juan Diego Negrete Portillo.</span>
+    <span class="footer__built" data-i18n="footer.built">Construido con HTML, CSS y JavaScript · alojado en GitHub Pages</span>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

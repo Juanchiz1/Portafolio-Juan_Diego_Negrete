@@ -110,8 +110,11 @@ const PROJECTS = [
     thumbGradient: "linear-gradient(145deg, #0F3D2E 0%, #1C3049 100%)",
     github: "https://github.com/Juanchiz1/agrogranja-laravel",
     demo: "",
-    image: "assets/projects/agrogranja-logo.png",
-    imageMode: "contain"
+    gallery: [
+      "assets/projects/Agrogranja/pantallaalingresar.png",
+      "assets/projects/Agrogranja/iniciarsesion.png",
+      "assets/projects/Agrogranja/moduloanimales.png"
+    ]
   },
   {
     id: "agrogranja-mobile",
@@ -128,6 +131,90 @@ const PROJECTS = [
     demo: "",
     image: "",
     imageMode: "cover"
+  },
+  {
+    id: "festival-porro",
+    title: { es: "Festival del Porro — Sitio informativo", en: "Festival del Porro — Informational site" },
+    description: {
+      es: "Sitio web informativo sobre el Festival Nacional del Porro de San Pelayo, Córdoba: su historia, qué es el porro y la agenda del evento. Maquetado con una arquitectura Sass modular (variables, mixins, partials) y un pipeline de Gulp para compilar y optimizar los estilos.",
+      en: "Informational site about the Festival Nacional del Porro in San Pelayo, Córdoba: its history, what porro music is, and the event's schedule. Built with a modular Sass architecture (variables, mixins, partials) and a Gulp pipeline to compile and optimize the styles."
+    },
+    tags: ["SCSS", "CSS", "HTML", "JavaScript"],
+    status: { es: "Publicado", en: "Published" },
+    icon: "fa-solid fa-music",
+    thumbGradient: "linear-gradient(145deg, #6B2D5C 0%, #2F2049 100%)",
+    github: "https://github.com/Juanchiz1/FestivalPorro",
+    demo: "https://juanchiz1.github.io/FestivalPorro/",
+    gallery: [
+      "assets/projects/Festivalporro/inicio.png",
+      "assets/projects/Festivalporro/historiadelporro.png",
+      "assets/projects/Festivalporro/queeselporro.png"
+    ]
+  },
+  {
+    id: "frontend-store",
+    title: { es: "FrontEnd Store — Catálogo para developers", en: "FrontEnd Store — Developer catalog" },
+    description: {
+      es: "Catálogo de camisetas para developers, con los logos de los lenguajes y frameworks más usados (React, Vue, Angular, Node, GraphQL, TypeScript y más). Empezó como ejercicio de un curso de HTML/CSS con Grid y lo amplié con página de producto dinámica, carrito de compras, favoritos, buscador y animaciones.",
+      en: "A t-shirt catalog for developers featuring the logos of the most-used languages and frameworks (React, Vue, Angular, Node, GraphQL, TypeScript and more). Started as an HTML/CSS Grid course exercise and I expanded it with a dynamic product page, shopping cart, favorites, search and animations."
+    },
+    tags: ["HTML", "CSS", "JavaScript"],
+    status: { es: "Publicado", en: "Published" },
+    icon: "fa-solid fa-shirt",
+    thumbGradient: "linear-gradient(145deg, #6E1E80 0%, #B347D9 100%)",
+    github: "https://github.com/Juanchiz1/FrontEndStore",
+    demo: "https://juanchiz1.github.io/FrontEndStore/",
+    gallery: [
+      "assets/projects/Frontendstore/busqueda-y-favoritos.png",
+      "assets/projects/Frontendstore/carrito.png",
+      "assets/projects/Frontendstore/detalle-producto.png"
+    ]
+  },
+  {
+    id: "helpdesk",
+    title: { es: "HelpDesk — Sistema de tickets de soporte", en: "HelpDesk — Support ticket system" },
+    description: {
+      es: "Sistema full-stack de mesa de ayuda. Backend: API REST en Spring Boot con autenticación JWT, control de roles y documentación interactiva con Swagger, contenedorizada con Docker y desplegada en Render con PostgreSQL gestionado en Neon. Frontend: cliente en React + Vite desplegado en Vercel, con dashboard de tickets, filtros por prioridad/estado, indicador de SLA vencido y panel de administración de usuarios.",
+      en: "Full-stack helpdesk system. Backend: a Spring Boot REST API with JWT authentication, role-based access and interactive Swagger docs, containerized with Docker and deployed on Render with PostgreSQL managed on Neon. Frontend: a React + Vite client deployed on Vercel, with a ticket dashboard, priority/status filters, an overdue-SLA indicator and a user administration panel."
+    },
+    tags: ["Java", "Spring", "PostgreSQL", "Docker", "React", "JavaScript"],
+    status: { es: "Publicado", en: "Published" },
+    icon: "fa-solid fa-headset",
+    thumbGradient: "linear-gradient(145deg, #16283B 0%, #23856D 100%)",
+    github: "https://github.com/Juanchiz1/helpdesk-api-springboot",
+    demo: "https://helpdesk-api-springboot.onrender.com/swagger-ui.html",
+    links: [
+      { label: { es: "API (backend)", en: "API (backend)" }, url: "https://github.com/Juanchiz1/helpdesk-api-springboot", icon: "fa-brands fa-github" },
+      { label: { es: "Swagger docs", en: "Swagger docs" }, url: "https://helpdesk-api-springboot.onrender.com/swagger-ui.html", icon: "fa-solid fa-book" },
+      { label: { es: "Frontend (repo)", en: "Frontend (repo)" }, url: "https://github.com/Juanchiz1/helpdesk-frontend", icon: "fa-brands fa-github" },
+      { label: { es: "App en vivo", en: "Live app" }, url: "https://helpdesk-frontend-olive-five.vercel.app", icon: "fa-solid fa-arrow-up-right-from-square" }
+    ],
+    gallery: [
+      "assets/projects/Helpdesk/frontenddesplegado.png",
+      "assets/projects/Helpdesk/detalle-ticket.png",
+      "assets/projects/Helpdesk/swagger-produccion.png",
+      "assets/projects/Helpdesk/backend.png"
+    ]
+  },
+  {
+    id: "rincon-local",
+    title: { es: "RincónLocal — Reseñas de lugares en Montería", en: "RincónLocal — Place reviews in Montería" },
+    description: {
+      es: "Plataforma de reseñas de lugares de Montería, Córdoba, con calificación por categorías (comida, servicio, ambiente) y ordenamiento por cercanía usando la geolocalización del navegador. Incluye datos de prueba con lugares reales de la ciudad. Aún en construcción, pendiente de publicar.",
+      en: "A review platform for places in Montería, Córdoba, with category ratings (food, service, atmosphere) and distance-based sorting using the browser's geolocation. Ships with seed data of real places in the city. Still under construction, not yet published."
+    },
+    tags: ["PHP", "MySQL", "JavaScript"],
+    status: { es: "En desarrollo", en: "In development" },
+    icon: "fa-solid fa-map-location-dot",
+    thumbGradient: "linear-gradient(145deg, #2F4858 0%, #2FA88A 100%)",
+    github: "https://github.com/Juanchiz1/Rincon-Local",
+    demo: "",
+    gallery: [
+      "assets/projects/Rinconlocal/inicio.png",
+      "assets/projects/Rinconlocal/imagenadminpanel.png",
+      "assets/projects/Rinconlocal/imagenrondadelsinu.png",
+      "assets/projects/Rinconlocal/api.jpeg"
+    ]
   },
   {
     id: "mas-proyectos",
@@ -164,6 +251,14 @@ const TAG_ICON_MAP = {
   "Python":       "devicon-python-plain",
   "HTML":         "devicon-html5-plain",
   "CSS":          "devicon-css3-plain",
+  "SCSS":         "devicon-sass-original",
+  "TypeScript":   "devicon-typescript-plain",
+  "GraphQL":      "devicon-graphql-plain",
+  "Vue":          "devicon-vuejs-plain",
+  "Angular":      "devicon-angularjs-plain",
+  "Spring":       "devicon-spring-plain",
+  "PostgreSQL":   "devicon-postgresql-plain",
+  "Docker":       "devicon-docker-plain",
   "SQL":          "fa-solid fa-database"
 };
 

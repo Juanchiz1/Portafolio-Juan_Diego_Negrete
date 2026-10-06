@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
     renderHobbies,
     initReveal,
     initContactForm,
-    initQuoteForm
+    initQuoteForm,
+    initLightbox
   ];
   steps.forEach(fn => {
     try { fn(); } catch(err){ console.error(`Error en ${fn.name}:`, err); }
@@ -218,20 +219,85 @@ function renderProjects(){
     draw(btn.dataset.tag);
   });
 
+  // Delegación de eventos para las galerías de capturas (flechas, puntos
+  // y clic para abrir en pantalla completa), así funciona sin importar
+  // cuántas veces se vuelva a dibujar el grid.
+  grid.addEventListener("click", (e) => {
+    const nav = e.target.closest(".project-gallery__nav");
+    const dot = e.target.closest(".project-gallery__dots span");
+    const img = e.target.closest(".project-gallery__track img");
+
+    if(!nav && !dot && !img) return;
+
+    const gallery = e.target.closest(".project-gallery");
+    if(!gallery) return;
+    const track = gallery.querySelector(".project-gallery__track");
+    const dots = gallery.querySelectorAll(".project-gallery__dots span");
+    const total = track.children.length;
+    let active = parseInt(gallery.dataset.active, 10) || 0;
+
+    if(nav){
+      active = nav.classList.contains("project-gallery__nav--prev")
+        ? (active - 1 + total) % total
+        : (active + 1) % total;
+      gallery.dataset.active = active;
+      track.style.transform = `translateX(-${active * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle("is-active", i === active));
+      return;
+    }
+
+    if(dot){
+      active = parseInt(dot.dataset.dot, 10) || 0;
+      gallery.dataset.active = active;
+      track.style.transform = `translateX(-${active * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle("is-active", i === active));
+      return;
+    }
+
+    if(img && typeof window.openLightbox === "function"){
+      const images = [...track.querySelectorAll("img")].map(i => i.src);
+      window.openLightbox(images, active, gallery.dataset.title || "");
+    }
+  });
+
   draw(allLabel);
+}
+
+function projectGalleryHTML(images, title){
+  if(!images || !images.length) return "";
+  const slides = images.map((src, i) =>
+    `<img src="${escapeHtml(src)}" alt="${escapeHtml(title)} — captura ${i + 1}" loading="lazy">`
+  ).join("");
+  const dots = images.map((_, i) =>
+    `<span class="${i === 0 ? "is-active" : ""}" data-dot="${i}"></span>`
+  ).join("");
+  const navs = images.length > 1 ? `
+    <button type="button" class="project-gallery__nav project-gallery__nav--prev" aria-label="Captura anterior"><i class="fa-solid fa-chevron-left"></i></button>
+    <button type="button" class="project-gallery__nav project-gallery__nav--next" aria-label="Siguiente captura"><i class="fa-solid fa-chevron-right"></i></button>
+  ` : "";
+
+  return `
+  <div class="project-gallery" data-active="0" data-title="${escapeHtml(title)}">
+    <div class="project-gallery__track">${slides}</div>
+    ${navs}
+    ${images.length > 1 ? `<div class="project-gallery__dots">${dots}</div>` : ""}
+    <span class="project-gallery__expand-hint"><i class="fa-solid fa-expand"></i></span>
+  </div>`;
 }
 
 function projectCardHTML(p){
   const title = pick(p.title);
-  const fit = p.imageMode === "contain" ? "contain" : "cover";
-  const padding = p.imageMode === "contain" ? "padding:1.6rem;" : "";
-  const thumbInner = p.image
-    ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(title)}" style="width:100%;height:100%;object-fit:${fit};position:absolute;inset:0;${padding}box-sizing:border-box;">`
-    : `<i class="${escapeHtml(p.icon || "fa-solid fa-code")}"></i>`;
+  let thumbInner;
 
-  const demoLink = p.demo
-    ? `<a href="${escapeHtml(p.demo)}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> ${escapeHtml(t("proyectos.demo") || "Demo")}</a>`
-    : "";
+  if(p.gallery && p.gallery.length){
+    thumbInner = projectGalleryHTML(p.gallery, title);
+  } else if(p.image){
+    const fit = p.imageMode === "contain" ? "contain" : "cover";
+    const padding = p.imageMode === "contain" ? "padding:1.6rem;" : "";
+    thumbInner = `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(title)}" style="width:100%;height:100%;object-fit:${fit};position:absolute;inset:0;${padding}box-sizing:border-box;">`;
+  } else {
+    thumbInner = `<i class="${escapeHtml(p.icon || "fa-solid fa-code")}"></i>`;
+  }
 
   const iconMap = typeof TAG_ICON_MAP !== "undefined" ? TAG_ICON_MAP : {};
   const tagsHtml = p.tags.map(tg => {
@@ -245,6 +311,18 @@ function projectCardHTML(p){
   const cardClass = p.isPlaceholderCard ? "project-card project-card--placeholder" : "project-card";
   const codeLabel = p.isPlaceholderCard ? (t("proyectos.verGithub") || "Ver GitHub") : (t("proyectos.codigo") || "Código");
 
+  let linksHtml;
+  if(p.links && p.links.length){
+    linksHtml = p.links.map(l =>
+      `<a href="${escapeHtml(l.url)}" target="_blank" rel="noopener"><i class="${escapeHtml(l.icon || "fa-solid fa-link")}"></i> ${escapeHtml(pick(l.label))}</a>`
+    ).join("");
+  } else {
+    const demoLink = p.demo
+      ? `<a href="${escapeHtml(p.demo)}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> ${escapeHtml(t("proyectos.demo") || "Demo")}</a>`
+      : "";
+    linksHtml = `<a href="${escapeHtml(p.github)}" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> ${escapeHtml(codeLabel)}</a>${demoLink}`;
+  }
+
   return `
   <article class="${cardClass}">
     <div class="project-card__thumb" data-status="${escapeHtml(pick(p.status))}" style="background:${p.thumbGradient || "var(--ink)"};">
@@ -255,11 +333,80 @@ function projectCardHTML(p){
       <p class="project-card__desc">${escapeHtml(pick(p.description))}</p>
       ${tagsHtml ? `<div class="project-card__tags">${tagsHtml}</div>` : ""}
       <div class="project-card__links">
-        <a href="${escapeHtml(p.github)}" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> ${escapeHtml(codeLabel)}</a>
-        ${demoLink}
+        ${linksHtml}
       </div>
     </div>
   </article>`;
+}
+
+/* ---------------- LIGHTBOX (capturas a pantalla completa) ---------------- */
+function initLightbox(){
+  if(document.getElementById("lightbox")) return;
+
+  const box = document.createElement("div");
+  box.className = "lightbox";
+  box.id = "lightbox";
+  box.innerHTML = `
+    <div class="lightbox__figure">
+      <button type="button" class="lightbox__close" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+      <img class="lightbox__img" src="" alt="">
+      <p class="lightbox__caption"></p>
+    </div>
+    <button type="button" class="lightbox__nav lightbox__nav--prev" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+    <button type="button" class="lightbox__nav lightbox__nav--next" aria-label="Siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+  `;
+  document.body.appendChild(box);
+
+  const img = box.querySelector(".lightbox__img");
+  const caption = box.querySelector(".lightbox__caption");
+  const prevBtn = box.querySelector(".lightbox__nav--prev");
+  const nextBtn = box.querySelector(".lightbox__nav--next");
+
+  let state = { images: [], index: 0, title: "" };
+
+  function show(){
+    if(!state.images.length) return;
+    img.src = state.images[state.index];
+    const multi = state.images.length > 1;
+    caption.textContent = multi
+      ? `${state.title} — ${state.index + 1}/${state.images.length}`
+      : state.title;
+    const showNav = multi;
+    prevBtn.style.display = showNav ? "flex" : "none";
+    nextBtn.style.display = showNav ? "flex" : "none";
+  }
+
+  function open(images, index, title){
+    state = { images: images || [], index: index || 0, title: title || "" };
+    show();
+    box.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function close(){
+    box.classList.remove("is-open");
+    document.body.style.overflow = "";
+  }
+
+  function step(dir){
+    if(!state.images.length) return;
+    state.index = (state.index + dir + state.images.length) % state.images.length;
+    show();
+  }
+
+  box.querySelector(".lightbox__close").addEventListener("click", close);
+  box.addEventListener("click", (e) => { if(e.target === box) close(); });
+  prevBtn.addEventListener("click", () => step(-1));
+  nextBtn.addEventListener("click", () => step(1));
+
+  document.addEventListener("keydown", (e) => {
+    if(!box.classList.contains("is-open")) return;
+    if(e.key === "Escape") close();
+    if(e.key === "ArrowLeft") step(-1);
+    if(e.key === "ArrowRight") step(1);
+  });
+
+  window.openLightbox = open;
 }
 
 /* ---------------- FORMACIÓN Y CERTIFICACIONES / COMMIT LOG ---------------- */

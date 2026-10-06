@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://juanchiz1.github.io/Portafolio-Juan_Diego_Negrete/sitemap.xml

@@ -5,6 +5,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Juan Diego Negrete Portillo — Desarrollador &amp; QA Tester</title>
 <meta name="description" content="Portafolio de Juan Diego Negrete Portillo. Ingeniero de Sistemas, desarrollador full-stack y QA Beta Tester certificado de SuperWorldBox. Disponible para roles junior remotos y proyectos freelance.">
+<link rel="canonical" href="https://juanchiz1.github.io/Portafolio-Juan_Diego_Negrete/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Juan Diego Negrete Portillo — Desarrollador & QA Tester">
+<meta property="og:description" content="Ingeniero de Sistemas, desarrollador full-stack y QA Beta Tester certificado de SuperWorldBox. Disponible para roles junior remotos y proyectos freelance.">
+<meta property="og:image" content="https://juanchiz1.github.io/Portafolio-Juan_Diego_Negrete/assets/social-preview.png">
+<meta property="og:url" content="https://juanchiz1.github.io/Portafolio-Juan_Diego_Negrete/">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="Juan Diego Negrete Portillo — Portafolio">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Juan Diego Negrete Portillo — Desarrollador & QA Tester">
+<meta name="twitter:description" content="Ingeniero de Sistemas, desarrollador full-stack y QA Beta Tester certificado de SuperWorldBox. Disponible para roles junior remotos y proyectos freelance.">
+<meta name="twitter:image" content="https://juanchiz1.github.io/Portafolio-Juan_Diego_Negrete/assets/social-preview.png">
+
+<!-- Datos estructurados (schema.org Person) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Juan Diego Negrete Portillo",
+  "url": "https://juanchiz1.github.io/Portafolio-Juan_Diego_Negrete/",
+  "image": "https://juanchiz1.github.io/Portafolio-Juan_Diego_Negrete/assets/social-preview.png",
+  "jobTitle": "Desarrollador Full-Stack & QA Tester",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Montería",
+    "addressCountry": "CO"
+  },
+  "email": "mailto:juandinegrete2006@outlook.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/juan-diego-negrete-portillo-352111195",
+    "https://github.com/Juanchiz1"
+  ],
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Universidad de Córdoba"
+  }
+}
+</script>
 
 <!-- Fuentes -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -116,10 +158,14 @@
 
       <div class="about">
         <div class="about__portrait">
-          <div class="portrait">
-            <img src="assets/juan-diego-foto.jpg" alt="Foto de Juan Diego Negrete Portillo">
+          <div class="portrait-frame">
+            <span class="portrait-frame__corner portrait-frame__corner--tl"></span>
+            <span class="portrait-frame__corner portrait-frame__corner--br"></span>
+            <div class="portrait">
+              <img src="assets/juan-diego-foto.jpg" alt="Foto de Juan Diego Negrete Portillo">
+            </div>
+            <div class="portrait__tag"><i class="fa-solid fa-circle-check"></i> <span data-i18n="about.portraitTag">disponible</span></div>
           </div>
-          <div class="portrait__ring"></div>
         </div>
 
         <div class="about__content">
@@ -217,8 +263,19 @@
         Mi trayectoria, en formato de historial de commits.
       </p>
 
-      <div class="commitlog" id="commitLog">
-        <!-- Generado desde js/data.js -->
+      <div class="trayectoria-split">
+        <div class="trayectoria-col">
+          <h3 class="trayectoria-col__title"><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="trayectoria.formacionTitle">Formación académica</span></h3>
+          <div class="commitlog" id="formacionLog">
+            <!-- Generado desde js/data.js -->
+          </div>
+        </div>
+        <div class="trayectoria-col">
+          <h3 class="trayectoria-col__title"><i class="fa-solid fa-certificate"></i> <span data-i18n="trayectoria.certificacionesTitle">Certificaciones</span></h3>
+          <div class="commitlog" id="certificacionesLog">
+            <!-- Generado desde js/data.js -->
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -322,7 +379,10 @@
 
       <div class="hobbies">
         <div class="hobbies__photo">
+          <span class="hobbies__photo-corner hobbies__photo-corner--tl"></span>
+          <span class="hobbies__photo-corner hobbies__photo-corner--br"></span>
           <img src="assets/juan-diego-naturaleza.jpg" data-i18n-alt="hobbies.imgAlt" alt="Juan Diego al aire libre, en un campo de Córdoba">
+          <div class="hobbies__photo-glow"></div>
         </div>
         <div class="hobbies__content">
           <p data-i18n="hobbies.p1" data-i18n-html>
@@ -340,7 +400,7 @@
           <div class="hobbies__list" id="hobbiesList">
             <!-- Generado desde js/data.js -->
           </div>
-          <a href="https://www.youtube.com/@Tiempoconjuandiego" target="_blank" rel="noopener" class="btn btn--ghost">
+          <a href="https://www.youtube.com/results?search_query=Tiempo+Con+Juan+Diego" target="_blank" rel="noopener" class="btn btn--ghost">
             <i class="fa-brands fa-youtube"></i> Tiempo Con Juan Diego
           </a>
         </div>

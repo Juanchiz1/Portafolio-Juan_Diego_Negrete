@@ -92,100 +92,108 @@ const EXPERIENCE = [
 ];
 
 /* ---------------------------------------------------------
-   3) PROYECTOS
+   3) PROYECTOS — repos reales de github.com/Juanchiz1
+   imageMode: "contain" para logos/marca (con aire alrededor) o
+   "cover" para una captura de pantalla a sangre completa.
 --------------------------------------------------------- */
 const PROJECTS = [
   {
-    id: "gestor-tareas",
-    title: { es: "Gestor de Tareas Full-Stack", en: "Full-Stack Task Manager" },
+    id: "agrogranja-laravel",
+    title: { es: "AgroGranja — Panel de Gestión", en: "AgroGranja — Management Dashboard" },
     description: {
-      es: "Aplicación web para crear, asignar y hacer seguimiento de tareas en equipo, con autenticación de usuarios y tablero tipo Kanban.",
-      en: "Web app to create, assign and track team tasks, with user authentication and a Kanban-style board."
+      es: "Sistema web para la gestión integral de fincas agropecuarias de pequeños y medianos productores de San Pelayo, Córdoba. Siete módulos (cultivos, animales, gastos, ingresos, agenda de tareas y reportes) más un submódulo especializado en ganado bovino: ordeño, lactancia, eventos reproductivos y protocolos sanitarios. Proyecto en equipo, con diseño mobile-first para conectividad limitada y documentación SRS bajo IEEE 830.",
+      en: "Web system for integral management of small and medium cattle/agricultural farms in San Pelayo, Córdoba. Seven modules (crops, animals, expenses, income, task agenda and reports) plus a specialized cattle submodule: milking, lactation, reproductive events and sanitary protocols. Built with a team, mobile-first for limited connectivity, with IEEE 830 SRS documentation.",
     },
-    tags: ["React", "Node.js", "SQL"],
-    status: { es: "MVP", en: "MVP" },
-    icon: "fa-solid fa-list-check",
-    thumbGradient: "linear-gradient(135deg, #16283B, #2FA88A)",
-    github: "https://github.com/Juanchiz1",
+    tags: ["PHP", "Laravel", "MySQL"],
+    status: { es: "En desarrollo", en: "In development" },
+    icon: "fa-solid fa-seedling",
+    thumbGradient: "linear-gradient(145deg, #0F3D2E 0%, #1C3049 100%)",
+    github: "https://github.com/Juanchiz1/agrogranja-laravel",
     demo: "",
-    image: ""
+    image: "assets/projects/agrogranja-logo.png",
+    imageMode: "contain"
   },
   {
-    id: "suite-automatizacion-qa",
-    title: { es: "Suite de Pruebas Automatizadas", en: "Automated Test Suite" },
+    id: "agrogranja-mobile",
+    title: { es: "AgroGranja — App Móvil", en: "AgroGranja — Mobile App" },
     description: {
-      es: "Conjunto de pruebas automatizadas end-to-end pensado para practicar el flujo real de QA: casos de prueba, reportes de bugs y verificación de builds.",
-      en: "End-to-end automated test suite built to practice a real QA workflow: test cases, bug reports and build verification."
+      es: "Aplicación móvil complementaria del panel AgroGranja: funciona 100% offline con SQLite local y sincroniza automáticamente con el backend de Laravel en cuanto hay conexión — pensada para fincas con señal intermitente.",
+      en: "Mobile companion app for the AgroGranja dashboard: works 100% offline with local SQLite and syncs automatically with the Laravel backend once there's a connection — built for farms with intermittent signal."
     },
-    tags: ["JavaScript", "QA", "Automatización"],
-    status: { es: "En progreso", en: "In progress" },
-    icon: "fa-solid fa-vial-circle-check",
-    thumbGradient: "linear-gradient(135deg, #10202F, #E3A23C)",
-    github: "https://github.com/Juanchiz1",
+    tags: ["JavaScript", "React Native", "SQLite"],
+    status: { es: "En desarrollo", en: "In development" },
+    icon: "fa-solid fa-mobile-screen-button",
+    thumbGradient: "linear-gradient(145deg, #1C3049 0%, #23856D 100%)",
+    github: "https://github.com/Juanchiz1/agrogranja-mobile",
     demo: "",
-    image: ""
+    image: "",
+    imageMode: "cover"
   },
   {
-    id: "api-rest-catalogo",
-    title: { es: "API REST — Catálogo de Productos", en: "REST API — Product Catalog" },
+    id: "mas-proyectos",
+    title: { es: "Más proyectos en camino", en: "More projects on the way" },
     description: {
-      es: "API construida con Node.js y Express para gestionar un catálogo de productos, con endpoints documentados y base de datos SQL.",
-      en: "API built with Node.js and Express to manage a product catalog, with documented endpoints and a SQL database."
+      es: "Sigo subiendo código a medida que avanzo en mis cursos y en la universidad. Entra a mi GitHub para ver el resto, incluidos ejercicios y proyectos de práctica.",
+      en: "I keep pushing code as I move through my courses and coursework. Check my GitHub for the rest, including exercises and practice projects."
     },
-    tags: ["Node.js", "SQL", "API"],
-    status: { es: "Terminado", en: "Completed" },
-    icon: "fa-solid fa-server",
-    thumbGradient: "linear-gradient(135deg, #1C3049, #57C29B)",
+    tags: [],
+    status: { es: "GitHub", en: "GitHub" },
+    icon: "fa-brands fa-github",
+    thumbGradient: "linear-gradient(145deg, #16283B 0%, #10202F 100%)",
     github: "https://github.com/Juanchiz1",
     demo: "",
-    image: ""
+    image: "",
+    imageMode: "cover",
+    isPlaceholderCard: true
+  }
+];
+
+/* Íconos (Devicon, con respaldo en Font Awesome) para cada etiqueta usada
+   arriba en PROJECTS — se usan tanto en los chips de filtro como en las
+   etiquetas de cada tarjeta, igual que en el stack técnico. */
+const TAG_ICON_MAP = {
+  "PHP":          "devicon-php-plain",
+  "Laravel":      "devicon-laravel-plain",
+  "MySQL":        "devicon-mysql-plain",
+  "JavaScript":   "devicon-javascript-plain",
+  "React Native": "devicon-react-original",
+  "SQLite":       "devicon-sqlite-plain",
+  "React":        "devicon-react-original",
+  "Node.js":      "devicon-nodejs-plain",
+  "Java":         "devicon-java-plain",
+  "Python":       "devicon-python-plain",
+  "HTML":         "devicon-html5-plain",
+  "CSS":          "devicon-css3-plain",
+  "SQL":          "fa-solid fa-database"
+};
+
+/* ---------------------------------------------------------
+   4a) FORMACIÓN ACADÉMICA — institucional, en curso
+--------------------------------------------------------- */
+const FORMACION = [
+  {
+    hash: "c5e3b21",
+    date: { es: "Mar 2023 — Dic 2027", en: "Mar 2023 — Dec 2027" },
+    title: {
+      es: "Ingeniería de Sistemas y Telecomunicaciones (9° semestre)",
+      en: "Systems and Telecommunications Engineering (9th semester)"
+    },
+    org: { es: "Universidad de Córdoba, Montería", en: "Universidad de Córdoba, Montería" },
+    status: "progress"
   },
   {
-    id: "landing-portafolio-cliente",
-    title: { es: "Landing Page — Proyecto Freelance", en: "Landing Page — Freelance Project" },
-    description: {
-      es: "Sitio de una sola página para un cliente ficticio, enfocado en performance, accesibilidad y diseño responsive.",
-      en: "One-page site for a sample client, focused on performance, accessibility and responsive design."
-    },
-    tags: ["HTML", "CSS", "JavaScript"],
-    status: { es: "Terminado", en: "Completed" },
-    icon: "fa-solid fa-window-maximize",
-    thumbGradient: "linear-gradient(135deg, #23856D, #16283B)",
-    github: "https://github.com/Juanchiz1",
-    demo: "",
-    image: ""
-  },
-  {
-    id: "app-escritorio-java",
-    title: { es: "Aplicación de Escritorio en Java", en: "Java Desktop Application" },
-    description: {
-      es: "Aplicación de escritorio orientada a objetos con conexión a base de datos vía JDBC, construida como práctica de arquitectura MVC.",
-      en: "Object-oriented desktop application with a JDBC database connection, built as an MVC architecture exercise."
-    },
-    tags: ["Java", "SQL", "MVC"],
-    status: { es: "Terminado", en: "Completed" },
-    icon: "fa-solid fa-cubes",
-    thumbGradient: "linear-gradient(135deg, #16283B, #E3A23C)",
-    github: "https://github.com/Juanchiz1",
-    demo: "",
-    image: ""
+    hash: "d4e5f60",
+    date: { es: "2017 — 2025", en: "2017 — 2025" },
+    title: { es: "Curso de Inglés — Certificado B2++ (nivel actual C1)", en: "English Course — B2++ Certified (current level C1)" },
+    org: "Universidad de Córdoba",
+    status: "done"
   }
 ];
 
 /* ---------------------------------------------------------
-   4) FORMACIÓN / CERTIFICACIONES — "commit log"
+   4b) CERTIFICACIONES — cursos y certificados independientes
 --------------------------------------------------------- */
-const TIMELINE = [
-  {
-    hash: "b3aa1f0",
-    date: { es: "Ene 2022 — Presente", en: "Jan 2022 — Present" },
-    title: {
-      es: "Beta Tester & Traductor de Videojuegos (Inglés–Español)",
-      en: "Beta Tester & Video Game Translator (English–Spanish)"
-    },
-    org: "Maxim Karpenko Studios (SuperWorldBox) — Remoto / Remote",
-    status: "done"
-  },
+const CERTIFICACIONES = [
   {
     hash: "7e2c9d4",
     date: { es: "2023 — 2025", en: "2023 — 2025" },
@@ -216,23 +224,6 @@ const TIMELINE = [
     },
     org: "Udemy",
     status: "progress"
-  },
-  {
-    hash: "c5e3b21",
-    date: { es: "Mar 2023 — Dic 2027", en: "Mar 2023 — Dec 2027" },
-    title: {
-      es: "Ingeniería de Sistemas y Telecomunicaciones (9° semestre)",
-      en: "Systems and Telecommunications Engineering (9th semester)"
-    },
-    org: { es: "Universidad de Córdoba, Montería", en: "Universidad de Córdoba, Montería" },
-    status: "progress"
-  },
-  {
-    hash: "d4e5f60",
-    date: { es: "2017 — 2025", en: "2017 — 2025" },
-    title: { es: "Curso de Inglés — Certificado B2++ (nivel actual C1)", en: "English Course — B2++ Certified (current level C1)" },
-    org: "Universidad de Córdoba",
-    status: "done"
   },
   {
     hash: "0a1b2c3",

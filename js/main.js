@@ -191,10 +191,15 @@ function renderProjects(){
 
   const allLabel = t("proyectos.filtroTodos") || "Todos";
   const allTags = [allLabel, ...new Set(PROJECTS.flatMap(p => p.tags))];
+  const iconMap = typeof TAG_ICON_MAP !== "undefined" ? TAG_ICON_MAP : {};
 
-  filtersWrap.innerHTML = allTags.map((tag, i) =>
-    `<button class="filter-chip ${i === 0 ? "is-active" : ""}" data-tag="${escapeHtml(tag)}">${escapeHtml(tag)}</button>`
-  ).join("");
+  filtersWrap.innerHTML = allTags.map((tag, i) => {
+    const icon = iconMap[tag];
+    const iconHtml = icon
+      ? (icon.startsWith("devicon-") ? `<i class="${escapeHtml(icon)} colored"></i>` : `<i class="${escapeHtml(icon)}"></i>`)
+      : "";
+    return `<button class="filter-chip ${i === 0 ? "is-active" : ""}" data-tag="${escapeHtml(tag)}">${iconHtml}${escapeHtml(tag)}</button>`;
+  }).join("");
 
   function draw(activeTag){
     const filtered = activeTag === allLabel
@@ -218,37 +223,49 @@ function renderProjects(){
 
 function projectCardHTML(p){
   const title = pick(p.title);
+  const fit = p.imageMode === "contain" ? "contain" : "cover";
+  const padding = p.imageMode === "contain" ? "padding:1.6rem;" : "";
   const thumbInner = p.image
-    ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(title)}" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">`
+    ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(title)}" style="width:100%;height:100%;object-fit:${fit};position:absolute;inset:0;${padding}box-sizing:border-box;">`
     : `<i class="${escapeHtml(p.icon || "fa-solid fa-code")}"></i>`;
 
   const demoLink = p.demo
     ? `<a href="${escapeHtml(p.demo)}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> ${escapeHtml(t("proyectos.demo") || "Demo")}</a>`
     : "";
 
+  const iconMap = typeof TAG_ICON_MAP !== "undefined" ? TAG_ICON_MAP : {};
+  const tagsHtml = p.tags.map(tg => {
+    const icon = iconMap[tg];
+    const iconHtml = icon
+      ? (icon.startsWith("devicon-") ? `<i class="${escapeHtml(icon)} colored"></i> ` : `<i class="${escapeHtml(icon)}"></i> `)
+      : "";
+    return `<span class="tag">${iconHtml}${escapeHtml(tg)}</span>`;
+  }).join("");
+
+  const cardClass = p.isPlaceholderCard ? "project-card project-card--placeholder" : "project-card";
+  const codeLabel = p.isPlaceholderCard ? (t("proyectos.verGithub") || "Ver GitHub") : (t("proyectos.codigo") || "Código");
+
   return `
-  <article class="project-card">
+  <article class="${cardClass}">
     <div class="project-card__thumb" data-status="${escapeHtml(pick(p.status))}" style="background:${p.thumbGradient || "var(--ink)"};">
       ${thumbInner}
     </div>
     <div class="project-card__body">
       <h3 class="project-card__title">${escapeHtml(title)}</h3>
       <p class="project-card__desc">${escapeHtml(pick(p.description))}</p>
-      <div class="project-card__tags">
-        ${p.tags.map(tg => `<span class="tag">${escapeHtml(tg)}</span>`).join("")}
-      </div>
+      ${tagsHtml ? `<div class="project-card__tags">${tagsHtml}</div>` : ""}
       <div class="project-card__links">
-        <a href="${escapeHtml(p.github)}" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> ${escapeHtml(t("proyectos.codigo") || "Código")}</a>
+        <a href="${escapeHtml(p.github)}" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> ${escapeHtml(codeLabel)}</a>
         ${demoLink}
       </div>
     </div>
   </article>`;
 }
 
-/* ---------------- TIMELINE / COMMIT LOG ---------------- */
-function renderTimeline(){
-  const wrap = document.getElementById("commitLog");
-  if(!wrap || typeof TIMELINE === "undefined") return;
+/* ---------------- FORMACIÓN Y CERTIFICACIONES / COMMIT LOG ---------------- */
+function renderCommitLog(containerId, items){
+  const wrap = document.getElementById(containerId);
+  if(!wrap || !items) return;
 
   const statusLabel = {
     done: t("trayectoria.listo") || "listo",
@@ -257,7 +274,7 @@ function renderTimeline(){
   };
   const statusClass = { done: "", progress: "is-progress", planned: "is-planned" };
 
-  wrap.innerHTML = TIMELINE.map(item => `
+  wrap.innerHTML = items.map(item => `
     <div class="commit ${statusClass[item.status] || ""}">
       <div class="commit__meta">
         <span class="commit__hash">#${escapeHtml(item.hash)}</span>
@@ -268,6 +285,11 @@ function renderTimeline(){
       <div class="commit__org">${escapeHtml(pick(item.org))}</div>
     </div>
   `).join("");
+}
+
+function renderTimeline(){
+  if(typeof FORMACION !== "undefined") renderCommitLog("formacionLog", FORMACION);
+  if(typeof CERTIFICACIONES !== "undefined") renderCommitLog("certificacionesLog", CERTIFICACIONES);
 }
 
 /* ---------------- SKILLS ---------------- */

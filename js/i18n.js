@@ -59,13 +59,18 @@ const UI_STRINGS = {
   "proyectos.filtroTodos": { es: "Todos", en: "All" },
   "proyectos.codigo":  { es: "Código", en: "Code" },
   "proyectos.demo":    { es: "Demo", en: "Demo" },
+  "proyectos.verGithub": { es: "Ver GitHub", en: "View GitHub" },
 
   "trayectoria.eyebrow": { es: "// 05 · trayectoria", en: "// 05 · education" },
   "trayectoria.title":   { es: "Formación y certificaciones", en: "Education & certifications" },
   "trayectoria.subtitle":{ es: "Mi trayectoria, en formato de historial de commits.", en: "My background, as a commit history." },
+  "trayectoria.formacionTitle": { es: "Formación académica", en: "Academic education" },
+  "trayectoria.certificacionesTitle": { es: "Certificaciones", en: "Certifications" },
   "trayectoria.listo":   { es: "listo", en: "done" },
   "trayectoria.enCurso": { es: "en curso", en: "in progress" },
   "trayectoria.proximo": { es: "próximo", en: "upcoming" },
+
+  "about.portraitTag": { es: "disponible", en: "available" },
 
   "habilidades.eyebrow": { es: "// 06 · habilidades", en: "// 06 · skills" },
   "habilidades.title":   { es: "Stack técnico", en: "Technical stack" },

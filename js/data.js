@@ -15,15 +15,15 @@
 --------------------------------------------------------- */
 const ROLES = {
   es: [
-    "Desarrollador Full-Stack Junior",
+    "Desarrollador Full-Stack Junior — Código D",
     "QA / Software Tester",
-    "Beta Tester certificado — SuperWorldBox",
+    "Beta Tester certificado — SuperWorldBox (2022–2026)",
     "Buscando oportunidades remotas"
   ],
   en: [
-    "Junior Full-Stack Developer",
+    "Junior Full-Stack Developer — Código D",
     "QA / Software Tester",
-    "Certified Beta Tester — SuperWorldBox",
+    "Certified Beta Tester — SuperWorldBox (2022–2026)",
     "Open to remote opportunities"
   ]
 };
@@ -35,8 +35,9 @@ const TERMINAL_LINES = {
   es: [
     { type: "desc",    text: "describe('Juan Diego Negrete Portillo', () => {" },
     { type: "pass",    text: "Ingeniería de Sistemas y Telecom. — 9° sem." },
-    { type: "pass",    text: "Inglés B2++" },
-    { type: "pass",    text: "Beta Tester & Traductor — SuperWorldBox (2022–hoy)" },
+    { type: "pass",    text: "Inglés B2+" },
+    { type: "pass",    text: "Fundador & Dev Full-Stack — Código D (2026–hoy)" },
+    { type: "pass",    text: "Beta Tester & Traductor — SuperWorldBox (2022–2026)" },
     { type: "pass",    text: "Java · Python · JavaScript · SQL · PHP" },
     { type: "pass",    text: "React · Node.js · MySQL · PostgreSQL" },
     { type: "desc",    text: "});" },
@@ -45,8 +46,9 @@ const TERMINAL_LINES = {
   en: [
     { type: "desc",    text: "describe('Juan Diego Negrete Portillo', () => {" },
     { type: "pass",    text: "Systems & Telecom Engineering — 9th sem." },
-    { type: "pass",    text: "English B2++" },
-    { type: "pass",    text: "Beta Tester & Translator — SuperWorldBox (2022–now)" },
+    { type: "pass",    text: "English B2+" },
+    { type: "pass",    text: "Founder & Full-Stack Dev — Código D (2026–now)" },
+    { type: "pass",    text: "Beta Tester & Translator — SuperWorldBox (2022–2026)" },
     { type: "pass",    text: "Java · Python · JavaScript · SQL · PHP" },
     { type: "pass",    text: "React · Node.js · MySQL · PostgreSQL" },
     { type: "desc",    text: "});" },
@@ -60,11 +62,40 @@ const TERMINAL_LINES = {
 const EXPERIENCE = [
   {
     role: {
+      es: "Desarrollador Full-Stack Junior",
+      en: "Junior Full-Stack Developer"
+    },
+    org: "Código D — emprendimiento propio",
+    period: { es: "Octubre 2026 — Actualidad", en: "October 2026 — Present" },
+    location: { es: "Montería, Colombia (remoto)", en: "Montería, Colombia (remote)" },
+    tags: [
+      { es: "Laravel", en: "Laravel" },
+      { es: "MySQL", en: "MySQL" },
+      { es: "Clientes reales", en: "Real clients" },
+      { es: "Gestión de proyecto", en: "Project management" }
+    ],
+    changes: {
+      es: [
+        "Diseño y desarrollo sitios web, tiendas en línea y sistemas de gestión a medida en Laravel y MySQL para negocios locales de Montería.",
+        "Construí tiendas con pedidos por WhatsApp y pagos por Nequi/Bancolombia, y una plataforma de inscripción para una escuela de fútbol juvenil.",
+        "Trabajo con entrega por etapas: comparto enlaces de revisión con cada cliente a medida que avanza el desarrollo, antes del lanzamiento final.",
+        "Gestiono cada proyecto de principio a fin — cotización, desarrollo, pruebas y soporte posterior — como mi propio emprendimiento de desarrollo de software."
+      ],
+      en: [
+        "Design and build custom websites, online stores and management systems in Laravel and MySQL for local businesses in Montería.",
+        "Built stores with WhatsApp ordering and Nequi/Bancolombia payments, plus an enrollment platform for a youth soccer school.",
+        "Work with staged delivery: I share review links with each client as development progresses, ahead of final launch.",
+        "Run every project end-to-end — quoting, development, testing and post-launch support — as my own software development venture."
+      ]
+    }
+  },
+  {
+    role: {
       es: "Beta Tester & Traductor de Videojuegos (Inglés–Español)",
       en: "Beta Tester & Video Game Translator (English–Spanish)"
     },
     org: "Maxim Karpenko Studios — SuperWorldBox",
-    period: { es: "Enero 2022 — Actualidad", en: "January 2022 — Present" },
+    period: { es: "Enero 2022 — Julio 2026", en: "January 2022 — July 2026" },
     location: { es: "Remoto", en: "Remote" },
     tags: [
       { es: "QA", en: "QA" },
@@ -279,7 +310,7 @@ const FORMACION = [
   {
     hash: "d4e5f60",
     date: { es: "2017 — 2025", en: "2017 — 2025" },
-    title: { es: "Curso de Inglés — Certificado B2++ (nivel actual C1)", en: "English Course — B2++ Certified (current level C1)" },
+    title: { es: "Curso de Inglés — Certificado B2+", en: "English Course — B2+ Certified" },
     org: "Universidad de Córdoba",
     status: "done"
   }

@@ -19,8 +19,8 @@ const UI_STRINGS = {
   "nav.contacto":    { es: "Contacto", en: "Contact" },
 
   "hero.desc": {
-    es: "Estudiante de noveno semestre de Ingeniería de Sistemas y Telecomunicaciones en la Universidad de Córdoba, con formación práctica en desarrollo full-stack. Construyo software y también lo pongo a prueba: soy <strong>Beta Tester y traductor EN→ES acreditado de SuperWorldBox</strong> (Maxim Karpenko Studios), reconocido en los créditos oficiales del estudio, con inglés B2++ (nivel actual C1) para trabajar con equipos remotos e internacionales.",
-    en: "Ninth-semester Systems and Telecommunications Engineering student at Universidad de Córdoba, with hands-on full-stack development experience. I build software and I also put it to the test: I'm an <strong>accredited Beta Tester and EN→ES translator for SuperWorldBox</strong> (Maxim Karpenko Studios), officially credited by the studio, with B2++ English (current level C1) to work with remote, international teams."
+    es: "Estudiante de noveno semestre de Ingeniería de Sistemas y Telecomunicaciones en la Universidad de Córdoba. Hoy desarrollo software a medida para negocios locales a través de mi propio emprendimiento, <strong>Código D</strong>, y antes pasé más de cuatro años como <strong>Beta Tester y traductor EN→ES acreditado de SuperWorldBox</strong> (Maxim Karpenko Studios), reconocido en los créditos oficiales del estudio. Inglés B2+ para trabajar con equipos remotos e internacionales.",
+    en: "Ninth-semester Systems and Telecommunications Engineering student at Universidad de Córdoba. Today I build custom software for local businesses through my own venture, <strong>Código D</strong>, and before that I spent over four years as an <strong>accredited Beta Tester and EN→ES translator for SuperWorldBox</strong> (Maxim Karpenko Studios), officially credited by the studio. B2+ English to work with remote, international teams."
   },
   "hero.verProyectos": { es: "Ver proyectos", en: "View projects" },
   "hero.descargarCV":  { es: "Descargar CV", en: "Download CV" },
@@ -28,21 +28,21 @@ const UI_STRINGS = {
   "about.eyebrow": { es: "// 02 · sobre-mi", en: "// 02 · about" },
   "about.title":   { es: "Un poco de contexto", en: "A bit of context" },
   "about.p1": {
-    es: "Soy Juan Diego, de Montería, Colombia. Curso noveno semestre de Ingeniería de Sistemas y Telecomunicaciones en la Universidad de Córdoba y estoy en la recta final antes de graduarme, buscando activamente mi primera oportunidad formal como desarrollador junior o QA tester — con preferencia por trabajo remoto, dado el mercado tech local limitado en Montería.",
-    en: "I'm Juan Diego, from Montería, Colombia. I'm in my ninth semester of Systems and Telecommunications Engineering at Universidad de Córdoba, heading into my final stretch before graduating, actively looking for my first formal role as a junior developer or QA tester — preferably remote, given the limited local tech market in Montería."
+    es: "Soy Juan Diego, de Montería, Colombia. Curso noveno semestre de Ingeniería de Sistemas y Telecomunicaciones en la Universidad de Córdoba y estoy en la recta final antes de graduarme. Actualmente desarrollo software por mi cuenta a través de mi emprendimiento, <strong>Código D</strong>, mientras busco activamente mi primera oportunidad formal como desarrollador junior o QA tester — con preferencia por trabajo remoto, dado el mercado tech local limitado en Montería.",
+    en: "I'm Juan Diego, from Montería, Colombia. I'm in my ninth semester of Systems and Telecommunications Engineering at Universidad de Córdoba, heading into my final stretch before graduating. I currently build software on my own through my venture, <strong>Código D</strong>, while actively looking for my first formal role as a junior developer or QA tester — preferably remote, given the limited local tech market in Montería."
   },
   "about.p2": {
-    es: "Mi punto diferencial es que ya tengo experiencia real fuera del aula: desde enero de 2022 soy <strong>Beta Tester y traductor EN→ES</strong> del videojuego <strong>SuperWorldBox</strong> para Maxim Karpenko Studios, ejecutando pruebas funcionales y de regresión antes de cada lanzamiento en Steam, documentando bugs de forma estructurada junto al equipo de desarrollo y traduciendo contenido del juego. Estoy <strong>reconocido oficialmente en los créditos del videojuego</strong> como tester del equipo — experiencia real de QA en un entorno internacional y remoto.",
-    en: "My differentiator is that I already have real experience outside the classroom: since January 2022 I've been a <strong>Beta Tester and EN→ES translator</strong> for the video game <strong>SuperWorldBox</strong>, made by Maxim Karpenko Studios, running functional and regression testing ahead of every Steam release, documenting bugs in a structured way alongside the dev team, and translating in-game content. I'm <strong>officially credited in the game's credits</strong> as a team tester — real QA experience in an international, remote environment."
+    es: "Mi punto diferencial es que ya tengo experiencia real fuera del aula: entre enero de 2022 y julio de 2026 fui <strong>Beta Tester y traductor EN→ES</strong> del videojuego <strong>SuperWorldBox</strong> para Maxim Karpenko Studios, ejecutando pruebas funcionales y de regresión antes de cada lanzamiento en Steam, documentando bugs de forma estructurada junto al equipo de desarrollo y traduciendo contenido del juego. Quedé <strong>reconocido oficialmente en los créditos del videojuego</strong> como tester del equipo — más de cuatro años de experiencia real de QA en un entorno internacional y remoto.",
+    en: "My differentiator is that I already have real experience outside the classroom: from January 2022 to July 2026 I was a <strong>Beta Tester and EN→ES translator</strong> for the video game <strong>SuperWorldBox</strong>, made by Maxim Karpenko Studios, running functional and regression testing ahead of every Steam release, documenting bugs in a structured way alongside the dev team, and translating in-game content. I was <strong>officially credited in the game's credits</strong> as a team tester — over four years of real QA experience in an international, remote environment."
   },
   "about.p3": {
-    es: "Manejo <strong>Java, Python, JavaScript, SQL y PHP</strong>, con desarrollo full-stack en <strong>React, Node.js, HTML5/CSS3</strong> y bases de conocimiento en Angular y Laravel. Trabajo con MySQL y PostgreSQL, Git/GitHub, y metodologías ágiles (Scrum, Kanban) en equipos remotos. Mi inglés es nivel <strong>B2++</strong> (nivel actual C1), lo que me permite trabajar sin fricción con equipos y clientes internacionales.",
-    en: "I work with <strong>Java, Python, JavaScript, SQL and PHP</strong>, doing full-stack development in <strong>React, Node.js, HTML5/CSS3</strong>, with working knowledge of Angular and Laravel. I use MySQL and PostgreSQL, Git/GitHub, and agile methodologies (Scrum, Kanban) in remote teams. My English is <strong>B2++</strong> (current level C1), which lets me work without friction with international teams and clients."
+    es: "Manejo <strong>Java, Python, JavaScript, SQL y PHP</strong>, con desarrollo full-stack en <strong>React, Node.js, HTML5/CSS3</strong> y bases de conocimiento en Angular y Laravel. Trabajo con MySQL y PostgreSQL, Git/GitHub, y metodologías ágiles (Scrum, Kanban) en equipos remotos. Mi inglés es nivel <strong>B2+</strong>, lo que me permite trabajar sin fricción con equipos y clientes internacionales.",
+    en: "I work with <strong>Java, Python, JavaScript, SQL and PHP</strong>, doing full-stack development in <strong>React, Node.js, HTML5/CSS3</strong>, with working knowledge of Angular and Laravel. I use MySQL and PostgreSQL, Git/GitHub, and agile methodologies (Scrum, Kanban) in remote teams. My English is <strong>B2+</strong>, which lets me work without friction with international teams and clients."
   },
   "about.fact.formacion.title": { es: "Ing. de Sistemas y Telecom.", en: "Systems & Telecom Eng." },
   "about.fact.formacion.sub":   { es: "Universidad de Córdoba — 9° semestre", en: "Universidad de Córdoba — 9th semester" },
-  "about.fact.ingles.title":    { es: "Inglés B2++", en: "English B2++" },
-  "about.fact.ingles.sub":      { es: "Nivel actual C1 — equipos internacionales", en: "Current level C1 — international teams" },
+  "about.fact.ingles.title":    { es: "Inglés B2+", en: "English B2+" },
+  "about.fact.ingles.sub":      { es: "Nivel certificado — equipos internacionales", en: "Certified level — international teams" },
   "about.fact.ubicacion.title": { es: "Montería, Colombia", en: "Montería, Colombia" },
   "about.fact.ubicacion.sub":   { es: "Disponible para trabajo remoto", en: "Available for remote work" },
   "about.fact.disponibilidad.title": { es: "Disponibilidad inmediata", en: "Immediate availability" },
@@ -80,8 +80,8 @@ const UI_STRINGS = {
   "servicios.eyebrow": { es: "// 07 · cotiza-tu-proyecto", en: "// 07 · get-a-quote" },
   "servicios.title":   { es: "Cotiza tu proyecto", en: "Get a quote" },
   "servicios.subtitle": {
-    es: "¿Tienes un negocio, un establecimiento o una idea que necesita software? Cuéntame qué necesitas y te envío una propuesta sin compromiso.",
-    en: "Do you have a business or an idea that needs software? Tell me what you need and I'll send you a no-obligation proposal."
+    es: "¿Tienes un negocio, un establecimiento o una idea que necesita software? Cuéntame qué necesitas y te envío una propuesta sin compromiso. Para proyectos más grandes también trabajo a través de mi emprendimiento, <a href=\"https://codigod.codigod231.workers.dev/\" target=\"_blank\" rel=\"noopener\"><strong>Código D</strong></a>.",
+    en: "Do you have a business or an idea that needs software? Tell me what you need and I'll send you a no-obligation proposal. For larger projects I also work through my venture, <a href=\"https://codigod.codigod231.workers.dev/\" target=\"_blank\" rel=\"noopener\"><strong>Código D</strong></a>."
   },
   "servicios.procesoTitle": { es: "Cómo trabajamos", en: "How we'll work together" },
   "servicios.formTitle": { es: "Cuéntame sobre tu proyecto", en: "Tell me about your project" },

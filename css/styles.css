@@ -247,7 +247,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 @keyframes rise{ from{ opacity:0; transform: translateY(6px);} to{ opacity:1; transform:translateY(0);} }
 
 .hero__badge{
-  background: var(--paper-raise);
+   background: var(--paper-raise);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);

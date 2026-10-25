@@ -143,8 +143,8 @@ const PROJECTS = [
     status: { es: "Publicado", en: "Published" },
     icon: "fa-solid fa-music",
     thumbGradient: "linear-gradient(145deg, #6B2D5C 0%, #2F2049 100%)",
-    github: "https://github.com/Juanchiz1/FestivalPorro",
-    demo: "https://juanchiz1.github.io/FestivalPorro/",
+    github: "https://github.com/Juanchiz1/festival-porro-san-pelayo",
+    demo: "https://juanchiz1.github.io/festival-porro-san-pelayo/",
     gallery: [
       "assets/projects/Festivalporro/inicio.png",
       "assets/projects/Festivalporro/historiadelporro.png",
@@ -162,8 +162,8 @@ const PROJECTS = [
     status: { es: "Publicado", en: "Published" },
     icon: "fa-solid fa-shirt",
     thumbGradient: "linear-gradient(145deg, #6E1E80 0%, #B347D9 100%)",
-    github: "https://github.com/Juanchiz1/FrontEndStore",
-    demo: "https://juanchiz1.github.io/FrontEndStore/",
+    github: "https://github.com/Juanchiz1/frontend-store",
+    demo: "https://juanchiz1.github.io/frontend-store/",
     gallery: [
       "assets/projects/Frontendstore/busqueda-y-favoritos.png",
       "assets/projects/Frontendstore/carrito.png",
@@ -186,7 +186,7 @@ const PROJECTS = [
     links: [
       { label: { es: "API (backend)", en: "API (backend)" }, url: "https://github.com/Juanchiz1/helpdesk-api-springboot", icon: "fa-brands fa-github" },
       { label: { es: "Swagger docs", en: "Swagger docs" }, url: "https://helpdesk-api-springboot.onrender.com/swagger-ui.html", icon: "fa-solid fa-book" },
-      { label: { es: "Frontend (repo)", en: "Frontend (repo)" }, url: "https://github.com/Juanchiz1/helpdesk-frontend", icon: "fa-brands fa-github" },
+      { label: { es: "Frontend (repo)", en: "Frontend (repo)" }, url: "https://github.com/Juanchiz1/helpdesk-frontend-react", icon: "fa-brands fa-github" },
       { label: { es: "App en vivo", en: "Live app" }, url: "https://helpdesk-frontend-olive-five.vercel.app", icon: "fa-solid fa-arrow-up-right-from-square" }
     ],
     gallery: [
@@ -207,7 +207,7 @@ const PROJECTS = [
     status: { es: "En desarrollo", en: "In development" },
     icon: "fa-solid fa-map-location-dot",
     thumbGradient: "linear-gradient(145deg, #2F4858 0%, #2FA88A 100%)",
-    github: "https://github.com/Juanchiz1/Rincon-Local",
+    github: "https://github.com/Juanchiz1/rincon-local",
     demo: "",
     gallery: [
       "assets/projects/Rinconlocal/inicio.png",
